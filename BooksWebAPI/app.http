@@ -1,0 +1,39 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@hostname=localhost
+@port=2002
+
+
+GET https://{{hostname}}:{{port}}/books
+Accept: application/json
+###
+
+GET https://{{hostname}}:{{port}}/books/043df7a0-fe36-4256-93c1-0eb4aacbe038
+Accept: application/json
+###
+
+POST https://{{hostname}}:{{port}}/books/addbook
+Content-Type: application/json
+{
+    "id":"8992a0c4-448d-4055-b80e-2f78fceb2f11",
+    "title": "Net Core Web API",
+    "author": "Microsoft",
+    "genre": "Software Development",
+    "description": "C#",
+    "isbn": "0001",
+    "price": 10    
+}
+###
+PUT https://{{hostname}}:{{port}}/books/updatebook/8992a0c4-448d-4055-b80e-2f78fceb2f11
+Content-Type: application/json
+{
+    "id":"8992a0c4-448d-4055-b80e-2f78fceb2f11",
+    "title": "Net Core Web API 01",
+    "author": "Microsoft",
+    "genre": "Software Development",
+    "description": "C#",
+    "isbn": "0002",
+    "price": 20    
+}
+
+###
+DELETE https://{{hostname}}:{{port}}/books/deletebook/8992a0c4-448d-4055-b80e-2f78fceb2f11
